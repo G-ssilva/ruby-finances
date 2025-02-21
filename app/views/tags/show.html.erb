@@ -1,9 +1,9 @@
 <% cache @tag do %>
   <h1><%= @tag.name %></h1>
 
-  <%= link_to "Back", tags_path %>
+  <%= link_to t("label.back"), tags_path %>
   <% if authenticated? %>
-    <%= link_to "Edit", edit_tag_path(@tag) %>
-    <%= button_to "Delete", @tag, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+    <%= link_to t("label.edit"), edit_tag_path(@tag) %>
+    <%= button_to t("label.delete"), @tag, method: :delete, data: { turbo_confirm: t("label.confirm") } %>
   <% end %>
 <% end %>
